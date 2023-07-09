@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker build -t ezraweb/files-gateway:latest --build-arg b2bucketSourceId="${bucketSourceId}" --build-arg b2AppKeyId="${b2AppKeyId}" --build-arg b2AppKey="${b2AppKey}". '
+        sh 'docker build -t ezraweb/files-gateway:latest --build-arg b2bucketSourceId="${bucketSourceId}" --build-arg b2AppKeyId="${b2AppKeyId}" --build-arg b2AppKey="${b2AppKey}" . '
       }
     }
   }
