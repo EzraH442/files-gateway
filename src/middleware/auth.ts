@@ -11,7 +11,7 @@ const authenticate: RequestHandler = async (req, res, next) => {
   let error = false;
   const verifyResponse = await axios
                              .post(
-                                 'https://auth.ezrahuang.com/verify',
+                                 process.env.authUrl!,
                                  new URLSearchParams({token}).toString(),
                                  )
                              .then((res) => res.data)
