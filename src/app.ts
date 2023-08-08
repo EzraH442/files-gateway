@@ -1,7 +1,7 @@
 import cors from 'cors';
-import {configDotenv} from 'dotenv';
+import { configDotenv } from 'dotenv';
 import express from 'express';
-import {scheduleJob} from 'node-schedule';
+import { scheduleJob } from 'node-schedule';
 
 import authenticate from './middleware/auth';
 import list from './routes/list';
@@ -19,8 +19,10 @@ console.log(`current token is ${b2Auth.token}`);
 
 const application = express();
 application.use(cors());
-application.options('/list')
-application.use([ authenticate ]);
+application.options('/list');
+application.use([authenticate]);
 application.get('/list', list);
 
-application.listen(3010, () => { console.log(`listening on port 3010`); });
+application.listen(3010, () => {
+  console.log(`listening on port 3010`);
+});
