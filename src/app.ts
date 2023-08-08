@@ -6,6 +6,7 @@ import { scheduleJob } from 'node-schedule';
 import authenticate from './middleware/auth';
 import list from './routes/list';
 import b2Auth from './util/b2auth';
+import morgan from 'morgan';
 
 if (process.env.ENV != 'prod') {
   const env = configDotenv();
@@ -18,6 +19,7 @@ job.invoke();
 console.log(`current token is ${b2Auth.token}`);
 
 const application = express();
+application.use(morgan('combined'));
 application.use(cors());
 application.options('/list');
 application.use([authenticate]);
