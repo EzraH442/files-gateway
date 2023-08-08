@@ -8,7 +8,7 @@ ARG authUrl
 ENV ENV=prod
 ENV authUrl=${authUrl}
 ENV bucketSourceId=${bucketSourceId}
-ENV b2AppKey=${b2AppKeyId}
+ENV b2AppKey=${b2AppKey}
 ENV b2AppKeyId=${b2AppKeyId}
 
 WORKDIR /app
