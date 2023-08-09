@@ -1,13 +1,13 @@
 FROM node:alpine
 
-ARG bucketSourceId
+ARG b2bucketSourceId
 ARG b2AppKey
 ARG b2AppKeyId
 ARG authUrl
 
 ENV ENV=prod
 ENV authUrl=${authUrl}
-ENV bucketSourceId=${bucketSourceId}
+ENV b2bucketSourceId=${b2bucketSourceId}
 ENV b2AppKey=${b2AppKey}
 ENV b2AppKeyId=${b2AppKeyId}
 

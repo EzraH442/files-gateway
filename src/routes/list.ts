@@ -4,22 +4,22 @@ import { b2Base } from '../constants';
 import b2Auth from '../util/b2auth';
 
 const list: Handler = async (req, res) => {
-  const prefix = req.query.prefix?.toString() ?? ''
-  const delimiter = req.query.delimiter?.toString() ?? ''
+  const prefix = req.query.prefix?.toString() ?? '';
+  const delimiter = req.query.delimiter?.toString() ?? '';
 
-  console.log('list', prefix, delimiter)
+  console.log('list', prefix, delimiter);
 
   const paramsObj: Record<string, string> = {
     bucketId: process.env.bucketSourceId!,
-    maxFileCount: '10000'
+    maxFileCount: '10000',
   };
 
   if (prefix !== '') {
-    paramsObj.prefix = prefix
+    paramsObj.prefix = prefix;
   }
 
   if (delimiter !== '') {
-    paramsObj.delimiter = delimiter
+    paramsObj.delimiter = delimiter;
   }
 
   const response = await axios
