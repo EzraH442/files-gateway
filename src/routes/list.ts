@@ -10,7 +10,7 @@ const list: Handler = async (req, res) => {
   console.log('list', prefix, delimiter);
 
   const paramsObj: Record<string, string> = {
-    bucketId: process.env.bucketSourceId!,
+    bucketId: process.env.b2bucketSourceId!,
     maxFileCount: '10000',
   };
 
